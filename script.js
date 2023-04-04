@@ -1,11 +1,12 @@
 "use strict";
 
-
+// Selectors
 const toggleSwitch = document.querySelector('input[type="checkbox"]');
 const image1 = document.getElementById('img-1');
 const image2 = document.getElementById('img-2');
 const image3 = document.getElementById('img-3');
 const modeText = document.querySelector('.toggle-text');
+const modeIcon = document.querySelector('.fas');
 
 
 // Switch Theme
@@ -18,6 +19,9 @@ const switchTheme = () => {
     image3.src = 'img/dark-mode/undraw_code_thinking_re_dark.svg';
 
     modeText.textContent = 'Dark Mode';
+    modeIcon.classList.remove("fa-sun");
+    modeIcon.classList.add("fa-moon");
+
   } else {
     document.documentElement.setAttribute("data-theme", "light");
 
@@ -26,6 +30,9 @@ const switchTheme = () => {
     image3.src = "img/light-mode/undraw_code_thinking_light.svg";
 
     modeText.textContent = "Light Mode";
+    modeIcon.classList.remove("fa-moon");
+    modeIcon.classList.add("fa-sun");
+
   } 
 };
 
