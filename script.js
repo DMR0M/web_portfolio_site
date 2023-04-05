@@ -14,7 +14,7 @@ const textBox = document.getElementById('text-box');
 // Dark Mode Styles
 const darkMode = () => {
   // Navbar Style
-  nav.style.backgroundColor = 'rgb(0 0 0 / 50%)';
+  nav.style.backgroundColor = 'rgb(25 25 25 / 50%)';
   textBox.style.backgroundColor = 'rgb(255 255 255 / 50%)';
 
   // Icon Toggle
@@ -33,14 +33,14 @@ const darkMode = () => {
 const lightMode = () => {
   // Navbar Style
   nav.style.backgroundColor = 'rgb(255 255 255 / 50%)';
-  textBox.style.backgroundColor = 'rgb(0 0 0 / 50%)';
+  textBox.style.backgroundColor = 'rgb(25 25 25 / 50%)';
 
   // Icon Toggle
   toggleIcon.children[0].textContent = 'Light Mode';
   toggleIcon.children[1].classList.remove('fa-moon');
   toggleIcon.children[1].classList.add('fa-sun');
   toggleIcon.children[1].style.color = 'black';
-  
+
   // // Images in About Section
   // image1.src = "img/light-mode/undraw_programming_re_light.svg";
   // image2.src = "img/light-mode/undraw_web_development_light.svg";
