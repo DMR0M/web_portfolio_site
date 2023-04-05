@@ -12,7 +12,8 @@
 }
 
 [data-theme="dark"] {
-  --primary-color: rgb(57, 255, 20);
+  --primary-color: rgb(79, 121, 66);
+  /* --primary-color: rgb(57, 255, 20); */
   --primary-variant: #6c63ff;
   --secondary-color: #03dac5;
   --on-primary: #000;
@@ -42,14 +43,14 @@ section {
 
 h1 {
   color: var(--on-background);
-  font-family: Montserrat Alternates, sans-serif;
+  font-family: League Spartan, sans-serif;
   font-size: 100px;
   margin-bottom: 0;
 }
 
 h2 {
   color: var(--on-background-alt);
-  font-family: Montserrat Alternates, sans-serif;
+  font-family: Libre Baskerville, sans-serif;
   font-size: 32px;
   font-weight: normal;
 }
@@ -261,10 +262,11 @@ input:checked + .slider::before {
 .fas {
   font-size: 30px;
   margin-right: 5px;
+  color: black;
 }
 
 p, span {
-  font-family: Montserrat Alternates, sans-serif;
+  font-family: League Spartan, sans-serif;
 }
 
 .fa-python, .fa-square-js, .fa-react {
