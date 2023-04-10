@@ -50,7 +50,7 @@ const lightMode = () => {
 // Switch Theme
 const switchTheme = () => {
   if (event.target.checked) {
-    document.documentElement.setAttribute('data-theme', 'dark');
+    document.documentElement.setAttribute("data-theme", "dark");
     darkMode();
 
   } else {
@@ -60,17 +60,16 @@ const switchTheme = () => {
   } 
 };
 
-// Contact Link
+// Contact Links
 const gotoLink = (clsSelector) => {
-  switch (clsSelector) {
-    case "fa-github":
-      window.open("https://github.com/DMR0M");
-    case "fa-linkedin":
-      window.open("https://www.linkedin.com/in/rommel-dela-merced-943970233/");
-    case "fa-square-facebook":
-      window.open("https://www.facebook.com/MemaPr1nce");
-    case "fa-instagram":
-      window.open("https://www.instagram.com/rommru/");
+  if(clsSelector === "fa-github") {
+    window.open("https://github.com/DMR0M");
+  } else if(clsSelector === "fa-linkedin") {
+    window.open("https://www.linkedin.com");
+  } else if(clsSelector === "fa-instagram") {
+    window.open("https://www.instagram.com/rommru/")
+  } else if(clsSelector === "fa-square-facebook") {
+    window.open("https://www.facebook.com/MemaPr1nce")
   }
 };
 
