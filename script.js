@@ -11,52 +11,29 @@ const modeText = document.querySelector('.toggle-text');
 const modeIcon = document.querySelector('.fas');
 const textBox = document.getElementById('text-box');
 
-// Dark Mode Styles
-const darkMode = () => {
+const selectedTheme = (isDark) => {
   // Navbar Style
-  nav.style.backgroundColor = 'rgb(25 25 25 / 50%)';
-  textBox.style.backgroundColor = 'rgb(255 255 255 / 50%)';
+  isDark ? nav.style.backgroundColor = 'rgb(25 25 25 / 50%)' : nav.style.backgroundColor = 'rgb(255 255 255 / 50%)';
+  isDark ? textBox.style.backgroundColor = 'rgb(255 255 255 / 50%)' : textBox.style.backgroundColor = 'rgb(25 25 25 / 50%)';
 
   // Icon Toggle
-  toggleIcon.children[0].textContent = 'Dark Mode';
-  toggleIcon.children[1].classList.remove('fa-sun');
-  toggleIcon.children[1].classList.add('fa-moon');
-  toggleIcon.children[1].style.color = 'white';
-
-  // Images in About Section
-  // image1.src = 'img/dark-mode/undraw_programming_re_dark.svg';
-  // image2.src = 'img/dark-mode/undraw_web_development_dark.svg';
-  // image3.src = 'img/dark-mode/undraw_code_thinking_re_dark.svg';
-};
-
-// Light Mode Styles
-const lightMode = () => {
-  // Navbar Style
-  nav.style.backgroundColor = 'rgb(255 255 255 / 50%)';
-  textBox.style.backgroundColor = 'rgb(25 25 25 / 50%)';
-
-  // Icon Toggle
-  toggleIcon.children[0].textContent = 'Light Mode';
-  toggleIcon.children[1].classList.remove('fa-moon');
-  toggleIcon.children[1].classList.add('fa-sun');
-  toggleIcon.children[1].style.color = 'black';
-
-  // // Images in About Section
-  // image1.src = "img/light-mode/undraw_programming_re_light.svg";
-  // image2.src = "img/light-mode/undraw_web_development_light.svg";
-  // image3.src = "img/light-mode/undraw_code_thinking_light.svg";
+  isDark ? toggleIcon.children[0].textContent = 'Dark Mode' : toggleIcon.children[0].textContent = 'Light Mode';
+  isDark ? toggleIcon.children[1].classList.remove('fa-sun') : toggleIcon.children[1].classList.remove('fa-moon');
+  isDark ? toggleIcon.children[1].classList.add('fa-moon') : toggleIcon.children[1].classList.add('fa-sun');
+  isDark ? toggleIcon.children[1].style.color = 'white' : toggleIcon.children[1].style.color = 'black';
 }
 
 // Switch Theme
 const switchTheme = () => {
   if (event.target.checked) {
     document.documentElement.setAttribute("data-theme", "dark");
-    darkMode();
+    localStorage.setItem("theme", "dark");
+    selectedTheme(true)
 
   } else {
     document.documentElement.setAttribute("data-theme", "light");
-    lightMode();
-
+    localStorage.setItem("theme", "light");
+    selectedTheme(false)
   } 
 };
 
@@ -75,3 +52,15 @@ const gotoLink = (clsSelector) => {
 
 // Event Listener
 toggleSwitch.addEventListener('change', switchTheme);
+
+// Save theme
+const currentTheme = localStorage.getItem('theme');
+
+if (currentTheme) {
+  document.documentElement.setAttribute('data-theme', currentTheme);
+
+  if (currentTheme === 'dark') {
+    toggleSwitch.checked = true;
+    selectedTheme(true)
+  }
+} 
