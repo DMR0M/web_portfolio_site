@@ -11,6 +11,8 @@ const modeText = document.querySelector('.toggle-text');
 const modeIcon = document.querySelector('.fas');
 const textBox = document.getElementById('text-box');
 
+const dlResumeElem = document.querySelector('.fa-file-pdf');
+
 const selectedTheme = (isDark) => {
   // Navbar Style
   isDark ? nav.style.backgroundColor = 'rgb(25 25 25 / 50%)' : nav.style.backgroundColor = 'rgb(255 255 255 / 50%)';
@@ -64,3 +66,7 @@ if (currentTheme) {
     selectedTheme(true)
   }
 } 
+
+dlResumeElem.addEventListener('click', () => {
+  alert('Resume Downloaded');
+});

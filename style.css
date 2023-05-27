@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan&family=Libre+Baskerville&display=swap');
 
 :root {
+   /* Default margin top value */
   --primary-color: rgb(79, 121, 66);
   --primary-variant: #ff2d2d;
   --secondary-color: #1b9999;
@@ -9,6 +10,10 @@
   --on-background-alt: rgba(66, 66, 66, 0.7);
   --background: rgb(255, 255, 255);
   --box-shadow: 0 5px 20px 1px rgba(0, 0, 0, 0.5);
+}
+
+.navbar {
+  margin-top: var(--navbar-margin-top);
 }
 
 [data-theme="dark"] {
@@ -82,8 +87,26 @@ a:focus {
 }
 
 /* Home Section */
+
 .title-group {
   text-align: center;
+  display: inline-block;
+}
+
+.title-group > i {
+  font-size: 35px;
+  margin-right: 20px;
+}
+
+.profile-group {
+  margin-top: 100px;
+  display: inline-block;
+}
+
+.profile-group img {
+  border: 1px solid;
+  border-radius: 150px;
+  box-shadow: 5px 5px 10px;
 }
 
 /* About Section */
@@ -269,7 +292,16 @@ p, span {
   font-family: League Spartan, sans-serif;
 }
 
-.fa-python, .fa-square-js, .fa-react {
+/* .fa-python, .fa-square-js, .fa-react {
   font-size: 35px;
   margin-right: 20px;
+} */
+
+.skills > i {
+  font-size: 35px;
+  margin-right: 20px;
+}
+
+.contact-group > i {
+
 }
