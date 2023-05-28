@@ -25,6 +25,26 @@ const projectTextDesc = document.querySelector('.project-section > h3');
 
 const contacts = document.querySelectorAll('.contact-group > .fa-brands');
 
+window.addEventListener('load', () => {
+  // Get project image
+  projectImage.src = './img/projects/my_website.png';
+  projectImage.alt = 'Personal Portfolio Website';
+
+  // Get project title
+  projectTitle.textContent = projectInfo[0].title;
+
+  // Get project description
+  projectTextDesc.textContent = projectInfo[0].description;
+
+  // Get project technologies or programming languages used
+  projectInfo[0].techonologies.forEach((techonology) => {
+    const projectTech = document.createElement('span');
+    projectTech.textContent = techonology;
+
+    projectTitle.appendChild(projectTech);
+  });
+});
+
 
 const selectedTheme = (isDark) => {
   // Navbar Style
@@ -87,21 +107,6 @@ if (currentTheme) {
 dlResumeElem.addEventListener('click', () => {
   alert('Resume Downloaded');
 });
-
-// const logInfo = (btnId) => {
-//   if (btnId === 'project-1') {
-//     console.log(projectInfo[0]);
-
-//   } else if (btnId === 'project-2') {
-//     console.log(projectInfo[1]);
-
-//   } else if (btnId === 'project-3') {
-//     console.log(projectInfo[2]);
-
-//   } else {
-//     console.log('Invalid button ID');
-//   }
-// };
 
 // Project Buttons
 projectBtns.forEach((button) => {
