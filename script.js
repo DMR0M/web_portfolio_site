@@ -1,6 +1,8 @@
 "use strict";
 
 import { projectInfo } from "./src/project_desc.js";
+import { get_skills } from "./src/skills.js";
+
 
 // Selectors
 const toggleSwitch = document.querySelector('input[type="checkbox"]');
@@ -15,7 +17,9 @@ const textBox = document.getElementById('text-box');
 
 const dlResumeElem = document.querySelector('.fa-file-pdf');
 
+const techSkills = document.querySelectorAll('.skill');
 const projectBtns = document.querySelectorAll('.btn');
+
 
 // const projectContainer = document.querySelector('.project-section');
 const projectImage = document.querySelector('.text-box > img');
@@ -43,6 +47,8 @@ window.addEventListener('load', () => {
 
     projectTitle.appendChild(projectTech);
   });
+
+  selectSkillDisplay('Javascript');
 });
 
 
@@ -74,6 +80,81 @@ const switchTheme = () => {
     selectedTheme(false)
   } 
 };
+
+// Select Skill Display
+const selectSkillDisplay = (techSkill) => {
+  
+  // Remove h3 elements inside skills container
+  const removeElements = (containerName) => {
+    const iconElems = document.querySelectorAll(`${containerName} > h3`);
+      h3Elems.forEach((iconElems) => iconElems.remove());
+    }
+    // document.querySelector('.selected').textContent = `Skills in ${techSkill}`
+
+    document.querySelector('.container-1 > h2').textContent = get_skills(techSkill).title[0];
+    document.querySelector('.container-2 > h2').textContent = get_skills(techSkill).title[1];
+
+    if (techSkill === 'Python') {
+      removeElements('.container-1');
+      removeElements('.container-2');
+
+      get_skills(techSkill).frameworks.forEach((skill) => {
+        const skillLabel = document.createElement('h3');
+        skillLabel.textContent = skill;
+        document.querySelector('.container-1').appendChild(skillLabel);
+
+      });
+      get_skills(techSkill).libraries.forEach((skill) => {
+        const skillLabel = document.createElement('h3');
+        skillLabel.textContent = skill;
+        document.querySelector('.container-2').appendChild(skillLabel);
+      });
+
+    } else if (techSkill === 'Javascript') {
+      removeElements('.container-1');
+      removeElements('.container-2');
+
+      get_skills(techSkill).others.forEach((skill) => {
+        const skillLabel = document.createElement('h3');
+        skillLabel.textContent = skill;
+        document.querySelector('.container-1').appendChild(skillLabel);
+      });
+      get_skills(techSkill).libraries.forEach((skill) => {
+        const skillLabel = document.createElement('h3');
+        skillLabel.textContent = skill;
+        document.querySelector('.container-2').appendChild(skillLabel);
+      });
+
+    } else if (techSkill === 'Web Design') {
+      removeElements('.container-1');
+      removeElements('.container-2');
+      get_skills(techSkill).cssFrameworks.forEach((skill) => {
+        const skillLabel = document.createElement('h3');
+        skillLabel.textContent = skill;
+        document.querySelector('.container-1').appendChild(skillLabel);
+      });
+
+    } else if (techSkill === 'Database') {
+      removeElements('.container-1');
+      removeElements('.container-2');
+      get_skills(techSkill).sqlDatabases.forEach((skill) => {
+        const skillLabel = document.createElement('h3');
+        skillLabel.textContent = skill;
+        document.querySelector('.container-1').appendChild(skillLabel);
+      });
+      get_skills(techSkill).noSqlDatabases.forEach((skill) => {
+        const skillLabel = document.createElement('h3');
+        skillLabel.textContent = skill;
+        document.querySelector('.container-2').appendChild(skillLabel);
+      });
+    }
+};
+
+// Skills in About Section
+techSkills.forEach((skill) => {
+  const skillText = skill.textContent.trimStart();
+  skill.addEventListener('click', () => selectSkillDisplay(skillText));
+});
 
 // Contact Links
 const gotoLink = (clsSelector) => {
@@ -112,8 +193,6 @@ dlResumeElem.addEventListener('click', () => {
 projectBtns.forEach((button) => {
   button.addEventListener('click', () => {
     const btnId = button.id;
-
-    console.log(btnId);
 
     if (btnId === 'project-1') {
       // console.log(projectInfo[0].title);
@@ -194,3 +273,4 @@ contacts.forEach(link => {
   console.log(iconId);
   link.addEventListener('click', () => iconClicked(iconId));
 });
+
