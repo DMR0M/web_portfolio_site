@@ -112,10 +112,11 @@ a:focus {
 }
 
 /* About Section */
-.grid-container {
-  display: grid;
-  grid-template-columns: 20fr 10fr;
-  justify-content: space-between;
+.grid-container > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 140px
 }
 
 .grid-container > .skill-container {
@@ -133,15 +134,18 @@ a:focus {
   color: var(--on-background);
   font-family: League Spartan, sans-serif;
   font-size: 35px;
+  margin: 0 0
+}
+.general {
+  margin-top: 200px;
 }
 
 .about-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 30px;
+  margin: 75px;
 }
-
 .image-container {
   border: 1px solid var(--secondary-color);
   border-radius: 10px;
@@ -155,7 +159,7 @@ a:focus {
 .skills-container {
   display: flex;
   justify-content: center;
-  align-items: center;
+  margin: 100px 100px;
 }
 
 .skills-container img {
@@ -280,6 +284,7 @@ p {
 }
 
 /* Contact Section */
+
 .fa-brands, .fa-regular, .fa-solid {
   font-size: 100px;
   margin: 50px;
