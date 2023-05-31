@@ -16,6 +16,14 @@
   margin-top: var(--navbar-margin-top);
 }
 
+.navbar a {
+  margin: 0 50px;
+}
+
+.navbar {
+  font-family: League Spartan, sans-serif;
+}
+
 [data-theme="dark"] {
   --primary-color: rgb(79, 121, 66);
   /* --primary-color: rgb(57, 255, 20); */
@@ -83,7 +91,7 @@ a {
 a:hover,
 a:focus {
   color: var(--on-background);
-  border-bottom: 3px solid;
+  /* border-bottom: 3px solid; */
 }
 
 /* Home Section */
@@ -307,7 +315,7 @@ p {
   z-index: 100;
   position: fixed;
   right: 25px;
-  top: 30px;
+  top: 80px;
 }
 
 .theme-switch-wrapper span {
@@ -316,6 +324,7 @@ p {
 }
 
 .toggle-text {
+  
   position: relative;
   top: -4px;
   right: 5px;
