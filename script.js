@@ -31,8 +31,8 @@ const contacts = document.querySelectorAll('.contact-group > .fa-brands');
 
 window.addEventListener('load', () => {
   // Get project image
-  projectImage.src = './img/projects/my_website.png';
-  projectImage.alt = 'Personal Portfolio Website';
+  projectImage.src = './img/projects/japanese-vocabulary-learning.png';
+  projectImage.alt = 'Japanese Vocabulary Learning Website';
 
   // Get project title
   projectTitle.textContent = projectInfo[0].title;
@@ -198,8 +198,8 @@ projectBtns.forEach((button) => {
       // console.log(projectInfo[0].title);
 
       // Get project image
-      projectImage.src = './img/projects/my_website.png';
-      projectImage.alt = 'Personal Portfolio Website';
+      projectImage.src = './img/projects/japanese-vocabulary-learning.png';
+      projectImage.alt = 'Japanese Vocabulary Learning Website';
 
       // Get project title
       projectTitle.textContent = projectInfo[0].title;
@@ -274,3 +274,9 @@ contacts.forEach(link => {
   link.addEventListener('click', () => iconClicked(iconId));
 });
 
+
+// Resume Download Link
+document.getElementById('download-link').addEventListener('click', function () {
+  this.setAttribute('href', './personal/RommelRudolf_DelaMerced_CV.pdf'); 
+  this.setAttribute('download', 'RommelRudolf_DelaMerced_CV.pdf'); 
+});

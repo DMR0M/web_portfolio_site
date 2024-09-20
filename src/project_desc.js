@@ -1,9 +1,9 @@
 
 export const projectInfo = [
     {
-        title: 'Personal Portfolio Website',
-        description: 'My portfolio website to view my projects, skills, experience, and information\nCoded in Pure HTML, CSS, and Javascript, utilizes Bootstrap for responsive web elements and grids.',
-        techonologies: ['HTML, CSS', 'Vanilla Javascript', 'Bootstrap'],
+        title: 'Japanese Vocabulary Learning Portal',
+        description: 'A japanese learning website that allows users to study and practice reading common hiragana, katakana, and kanji characters. Quizzes and challenges are included in the website',
+        techonologies: ['Python', 'Django', 'Bootstrap', 'Postgres'],
     },
     {
         title: 'Learning Log Website',
